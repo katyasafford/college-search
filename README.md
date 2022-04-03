@@ -1,6 +1,6 @@
 # College Search
 
-The app allows you to to search for colleges by name. The results are rendered on GoogleMap with silver theme, with a tooltip over each location marker. Tooltip contain college name information
+The app allows you to to search for colleges by name. The results are rendered on GoogleMap with silver theme, with a tooltip over each location marker. Tooltip contains college name information
 
 The app uses Material UI as a design library, Google Maps for map rendering and React Context API to communicate data between components. Current unit tests coverage is ~53%. Prettier and linter have been added to the app as well
 
