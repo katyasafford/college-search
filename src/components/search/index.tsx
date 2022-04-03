@@ -3,10 +3,14 @@ import ClearIcon from '@mui/icons-material/Clear';
 import SearchIcon from '@mui/icons-material/Search';
 import { debounce } from 'lodash';
 import React, { useState, useCallback, useContext } from 'react';
+
 import Api from '../../helpers/api';
 import { SchoolContext } from '../../providers/school-provider';
+import useStyles from './index.styles';
 
 const Search = () => {
+  const classes = useStyles();
+
   const [searchText, setSearchText] = useState<string>('');
 
   const { setErrorMessage, setSchools, setSchoolsLoading } = useContext(SchoolContext);
@@ -39,7 +43,7 @@ const Search = () => {
   };
 
   return (
-    <FormControl variant="outlined">
+    <FormControl variant="outlined" className={classes.inputField}>
       <OutlinedInput
         value={searchText}
         size="small"
