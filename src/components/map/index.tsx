@@ -27,7 +27,7 @@ const Map = () => {
 
       {!errorMessage && schoolsLoading && (
         <div className={classes.circularProgressWrapper}>
-          <CircularProgress color="primary" className={classes.circularProgress} />
+          <CircularProgress color="primary" className={classes.circularProgress} data-testid="circular-progress" />
         </div>
       )}
 
@@ -36,6 +36,7 @@ const Map = () => {
           <GoogleMapReact
             bootstrapURLKeys={{ key: googleMapsApiKey as string }}
             options={{ styles: mapTheme.silver as GoogleMapReact.MapTypeStyle[] }}
+            data-testid="map"
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}>
             {schools.map((school) => (

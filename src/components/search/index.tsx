@@ -49,6 +49,9 @@ const Search = () => {
         size="small"
         fullWidth={true}
         onChange={(e) => handleChange(e)}
+        inputProps={{
+          'data-testid': 'search-input'
+        }}
         startAdornment={
           <InputAdornment position="start">
             <SearchIcon />
