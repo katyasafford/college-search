@@ -27,7 +27,7 @@ const Map = () => {
 
       {!errorMessage && schoolsLoading && (
         <div className={classes.circularProgressWrapper}>
-          <CircularProgress color="secondary" className={classes.circularProgress} />
+          <CircularProgress color="primary" className={classes.circularProgress} />
         </div>
       )}
 
