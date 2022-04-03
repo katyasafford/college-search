@@ -1,10 +1,11 @@
 import { Alert, CircularProgress } from '@mui/material';
 import GoogleMapReact from 'google-map-react';
 import { useContext } from 'react';
-import { SchoolContext } from '../../providers/school-provider';
 
+import { SchoolContext } from '../../providers/school-provider';
 import useStyles from './index.styles';
 import Marker from './marker';
+import { mapTheme } from './map-silver-theme';
 
 const Map = () => {
   const classes = useStyles();
@@ -32,7 +33,11 @@ const Map = () => {
 
       {!errorMessage && (
         <div className={schoolsLoading ? classes.loadingMapContainer : classes.mapContainer}>
-          <GoogleMapReact bootstrapURLKeys={{ key: googleMapsApiKey as string }} defaultCenter={defaultProps.center} defaultZoom={defaultProps.zoom}>
+          <GoogleMapReact
+            bootstrapURLKeys={{ key: googleMapsApiKey as string }}
+            options={{ styles: mapTheme.silver as GoogleMapReact.MapTypeStyle[] }}
+            defaultCenter={defaultProps.center}
+            defaultZoom={defaultProps.zoom}>
             {schools.map((school) => (
               <Marker lat={school.location.lat} lng={school.location.lon} collegeName={school.latest.school.name} key={school.id} />
             ))}
